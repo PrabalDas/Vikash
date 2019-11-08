@@ -7,16 +7,16 @@ class BottomBarNavigationPatternExample extends StatefulWidget {
     BarItem(
       text: "Home",
       iconData: Icons.home,
-      color: Colors.indigo,
+      color: Colors.indigoAccent,
     ),
     BarItem(
-      text: "Likes",
-      iconData: Icons.favorite_border,
+      text: "Locate",
+      iconData: Icons.location_on,
       color: Colors.pinkAccent,
     ),
     BarItem(
-      text: "Search",
-      iconData: Icons.search,
+      text: "Messages",
+      iconData: Icons.message,
       color: Colors.yellow.shade900,
     ),
     BarItem(

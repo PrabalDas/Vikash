@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vikash/animation/fadeAnimation.dart';
+import 'package:vikash/pages/JobRecruiterPage.dart';
 
 class SelectionPage extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class _SelectionPageState extends State<SelectionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff303030),
+      backgroundColor: Color(0xff352f44),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -74,7 +75,7 @@ class _SelectionPageState extends State<SelectionPage> {
                         SizedBox(
                           height: 20,
                         ),
-                        InkWell(onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>SelectionPage()));},
+                        InkWell(onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>JobRecruiterPage()));},
                                                   child: Container(
                               height: 70,
                               width: 300,
