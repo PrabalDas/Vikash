@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vikash/pages/JobRecuiterPage/exportJR.dart';
 import '../bottom_bar_navigation_pattern/animated_bottom_bar.dart';
+
 
 
 class BottomBarNavigationPatternExample extends StatefulWidget {
@@ -7,22 +9,26 @@ class BottomBarNavigationPatternExample extends StatefulWidget {
     BarItem(
       text: "Home",
       iconData: Icons.home,
-      color: Colors.indigoAccent,
+      color: Colors.indigoAccent,  
+      pageOptions: HomePageofJobrecruiter()
     ),
     BarItem(
       text: "Locate",
       iconData: Icons.location_on,
       color: Colors.pinkAccent,
+      pageOptions: LocationPageofJobrecruiter()
     ),
     BarItem(
       text: "Messages",
       iconData: Icons.message,
       color: Colors.yellow.shade900,
+      pageOptions: MessagesPageofJobrecruiter()
     ),
     BarItem(
       text: "Profile",
       iconData: Icons.person_outline,
       color: Colors.teal,
+      pageOptions: ProfilePageofJobrecruiter()
     ),
   ];
 
@@ -34,14 +40,13 @@ class BottomBarNavigationPatternExample extends StatefulWidget {
 class _BottomBarNavigationPatternExampleState
     extends State<BottomBarNavigationPatternExample> {
   int selectedBarIndex = 0;
+  final _pageOptions =[HomePageofJobrecruiter(),LocationPageofJobrecruiter(),MessagesPageofJobrecruiter(),ProfilePageofJobrecruiter()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnimatedContainer(
-        color: widget.barItems[selectedBarIndex].color,
-        duration: const Duration(milliseconds: 300),
-      ),
+      body: _pageOptions[selectedBarIndex],
+      
       bottomNavigationBar: AnimatedBottomBar(
           barItems: widget.barItems,
           animationDuration: const Duration(milliseconds: 150),
