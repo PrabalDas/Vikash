@@ -21,20 +21,29 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               gradient: LinearGradient(
                   colors: [Color(0xfff8f8f8), Color(0xffeafbea)])),
           child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+            
+             crossAxisAlignment: CrossAxisAlignment.center,
+              
               children: <Widget>[
                 FadeAnimation(
                                  1.2,Container(
                     height: 279,
-                    child: Center(
-                      child: Text('Vikash',
-                          style: TextStyle(
-                            fontFamily: 'Montserrat',
-                            fontSize: 39,
-                            fontWeight: FontWeight.bold,
-                          )),
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Center(
+                          child: Text('Vikash',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 39,
+                                fontWeight: FontWeight.bold,
+                              )),
+                        ),Center( child: Text('Reaching Millions',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontSize: 20,
+                                fontWeight: FontWeight.normal,fontStyle: FontStyle.italic
+                              )),)
+                      ],
                     ),
                   ),
                 ),
