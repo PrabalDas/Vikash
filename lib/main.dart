@@ -1,14 +1,13 @@
 import 'dart:async';
 import 'package:vikash/pages/SplashScreen.dart';
 
-
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/animation.dart';
 import 'animation/fadeAnimation.dart';
 import 'package:async/async.dart';
+
+import 'pages/SelectionPage.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -33,7 +32,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(Duration(seconds: 3), ()=>navigationPage(context));
+    Timer(Duration(seconds: 3), () => navigationPage(context));
     super.initState();
   }
 
@@ -42,9 +41,11 @@ class _SplashScreenState extends State<SplashScreen> {
     return SplashScreenPage();
   }
 }
-  void navigationPage(context){
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder:(context)=>Homescreen()));
-  }
+
+void navigationPage(context) {
+  Navigator.of(context)
+      .pushReplacement(MaterialPageRoute(builder: (context) => Homescreen()));
+}
 
 class Homescreen extends StatefulWidget {
   @override
@@ -154,7 +155,7 @@ class _HomescreenState extends State<Homescreen> {
                             decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "Email or Phone Number",
-                                hintStyle: TextStyle(color: Colors.grey[300])),
+                                hintStyle: TextStyle(color: Colors.grey[400])),
                           ),
                         ),
                         Container(
@@ -167,7 +168,7 @@ class _HomescreenState extends State<Homescreen> {
                             decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "Password",
-                                hintStyle: TextStyle(color: Colors.grey[300])),
+                                hintStyle: TextStyle(color: Colors.grey[400])),
                           ),
                         ),
                       ],
@@ -177,7 +178,12 @@ class _HomescreenState extends State<Homescreen> {
                     height: 30,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SelectionPage()));
+                    },
                     child: Container(
                       height: 50,
                       decoration: BoxDecoration(
