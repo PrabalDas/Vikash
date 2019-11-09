@@ -7,7 +7,13 @@ import 'package:flutter/animation.dart';
 import 'animation/fadeAnimation.dart';
 import 'package:async/async.dart';
 
+
+import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+
+
 import 'pages/SelectionPage.dart';
+import 'widgets/Login_Page.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -52,173 +58,203 @@ class Homescreen extends StatefulWidget {
   _HomescreenState createState() => _HomescreenState();
 }
 
-class _HomescreenState extends State<Homescreen> {
+class _HomescreenState extends State<Homescreen> with TickerProviderStateMixin {
+  AnimationController _scaleController;
+  AnimationController _scale2Controller;
+  AnimationController _widthController;
+  AnimationController _positionController;
+
+  Animation<double> _scaleAnimation;
+  Animation<double> _scale2Animation;
+  Animation<double> _widthAnimation;
+  Animation<double> _positionAnimation;
+
+  bool hideIcon = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _scaleController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 300)
+    );
+
+    _scaleAnimation = Tween<double>(
+      begin: 1.0, end: 0.8
+    ).animate(_scaleController)..addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        _widthController.forward();
+      }
+    });
+
+    _widthController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 600)
+    );
+
+    _widthAnimation = Tween<double>(
+      begin: 80.0,
+      end: 300.0
+    ).animate(_widthController)..addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        _positionController.forward();
+      }
+    });
+
+    _positionController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 1000)
+    );
+
+    _positionAnimation = Tween<double>(
+      begin: 0.0,
+      end: 215.0
+    ).animate(_positionController)..addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        setState(() {
+          hideIcon = true;
+        });
+        _scale2Controller.forward();
+      }
+    });
+
+    _scale2Controller = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 300)
+    );
+
+    _scale2Animation = Tween<double>(
+      begin: 1.0,
+      end: 32.0
+    ).animate(_scale2Controller)..addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        Navigator.push(context, PageTransition(type: PageTransitionType.fade, child: LoginPage()));
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Container(
-              child: Column(children: <Widget>[
-            Container(
-              height: 320,
-              decoration: BoxDecoration(
+      backgroundColor: Color.fromRGBO(3, 9, 23, 1),
+      body: Container(
+        width: double.infinity,
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              top: -50,
+              left: 0,
+              child: FadeAnimation(1, Container(
+                width: width,
+                height: 400,
+                decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/images/background.png'),
-                      fit: BoxFit.fill)),
-              child: Stack(
-                fit: StackFit.expand,
+                    image: AssetImage('assets/images/one.png'),
+                    fit: BoxFit.cover
+                  )
+                ),
+              )),
+            ),
+            Positioned(
+              top: -100,
+              left: 0,
+              child: FadeAnimation(1.3, Container(
+                width: width,
+                height: 400,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/one.png'),
+                    fit: BoxFit.cover
+                  )
+                ),
+              )),
+            ),
+            Positioned(
+              top: -150,
+              left: 0,
+              child: FadeAnimation(1.6, Container(
+                width: width,
+                height: 400,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/one.png'),
+                    fit: BoxFit.cover
+                  )
+                ),
+              )),
+            ),
+            Container(
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Positioned(
-                    left: 30,
-                    width: 80,
-                    height: 200,
-                    child: FadeAnimation(
-                        1.5,
-                        Container(
+                  FadeAnimation(1, Text("Welcome To Vikash", 
+                  style: TextStyle(color: Colors.white, fontSize: 40,fontFamily: "Montserrat"),)),
+                  SizedBox(height: 15,),
+                  FadeAnimation(1.3, Text("Connecting People,Enriching lives!", 
+                  style: TextStyle(color: Colors.white.withOpacity(1), height: 1.4, fontSize: 17,fontFamily: "Montserrat",fontStyle: FontStyle.italic),)),
+                  SizedBox(height: 180,),
+                  FadeAnimation(1.6, AnimatedBuilder(
+                    animation: _scaleController,
+                    builder: (context, child) => Transform.scale(
+                    scale: _scaleAnimation.value,
+                    child: Center(
+                      child: AnimatedBuilder(
+                        animation: _widthController,
+                        builder: (context, child) => Container(
+                          width: _widthAnimation.value,
+                          height: 80,
+                          padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              image: DecorationImage(
-                            image: AssetImage('assets/images/light-1.png'),
-                          )),
-                        )),
-                  ),
-                  Positioned(
-                    left: 130,
-                    width: 80,
-                    height: 150,
-                    child: FadeAnimation(
-                        1.7,
-                        Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                            image: AssetImage('assets/images/light-1.png'),
-                          )),
-                        )),
-                  ),
-                  Positioned(
-                    right: 40,
-                    top: 20,
-                    width: 80,
-                    height: 150,
-                    child: FadeAnimation(
-                        1.9,
-                        Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                            image: AssetImage('assets/images/clock.png'),
-                          )),
-                        )),
-                  ),
-                  Positioned(
-                      child: Center(
-                    child: FadeAnimation(
-                        1.8,
-                        Container(
-                          margin: EdgeInsets.only(top: 65),
-                          child: Text(
-                            "Login",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Montserrat',
+                            borderRadius: BorderRadius.circular(50),
+                            color: Colors.blue.withOpacity(.4)
+                          ),
+                          child: InkWell(
+                            onTap: () {
+                              _scaleController.forward();
+                            },
+                            child: Stack(
+                              children: <Widget> [
+                                AnimatedBuilder(
+                                  animation: _positionController,
+                                  builder: (context, child) => Positioned(
+                                    left: _positionAnimation.value,
+                                    child: AnimatedBuilder(
+                                      animation: _scale2Controller,
+                                      builder: (context, child) => Transform.scale(
+                                        scale: _scale2Animation.value,
+                                        child: Container(
+                                          width: 60,
+                                          height: 60,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            color: Colors.blue
+                                          ),
+                                          child: hideIcon == false ? Icon(Icons.arrow_forward, color: Colors.white,) : Container(),
+                                        )
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ]
                             ),
                           ),
-                        )),
-                  ))
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(30),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromRGBO(143, 148, 251, .2),
-                              blurRadius: 20,
-                              offset: Offset(0, 10))
-                        ]),
-                    child: Column(
-                      children: <Widget>[
-                        Container(
-                          padding: EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                              border: Border(
-                                  bottom: BorderSide(color: Colors.grey[50]))),
-                          child: TextField(
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: "Email or Phone Number",
-                                hintStyle: TextStyle(color: Colors.grey[400])),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                              border: Border(
-                                  bottom: BorderSide(color: Colors.grey[50]))),
-                          child: TextField(
-                            obscureText: true,
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: "Password",
-                                hintStyle: TextStyle(color: Colors.grey[400])),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SelectionPage()));
-                    },
-                    child: Container(
-                      height: 50,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          gradient: LinearGradient(colors: [
-                            Color.fromRGBO(143, 148, 251, 1),
-                            Color.fromRGBO(143, 148, 251, .6),
-                          ])),
-                      child: Center(
-                        child: Text(
-                          "Login",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              fontFamily: 'Montserrat'),
                         ),
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Text(
-                    "Forgot Password?",
-                    style: TextStyle(
-                        color: Color.fromRGBO(143, 148, 251, 1),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                        fontFamily: 'Montserrat'),
-                  )
+                    )),
+                  )),
+                  SizedBox(height: 60,),
                 ],
               ),
-            ),
-          ])),
-        ));
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
