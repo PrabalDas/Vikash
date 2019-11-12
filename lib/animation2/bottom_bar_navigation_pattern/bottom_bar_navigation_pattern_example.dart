@@ -15,8 +15,8 @@ class BottomBarNavigationPatternExample extends StatefulWidget {
       pageOptions: HomePageofJobSeeker()
     ),
     BarItem(
-      text: "Locate",
-      iconData: Icons.location_on,
+      text: "Jobs",
+      iconData: Icons.work,
       color: Colors.pinkAccent,
       pageOptions: LocationPageofJobSeeker()
     ),

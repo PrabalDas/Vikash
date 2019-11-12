@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vikash/pages/JobRecuiterPage/exportJR.dart';
 
 class MessagesPageofJobSeeker extends StatefulWidget {
   @override
@@ -8,8 +9,8 @@ class MessagesPageofJobSeeker extends StatefulWidget {
 class _MessagesPageofJobSeekerState extends State<MessagesPageofJobSeeker> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Page3')),
+    return MessagesPageofJobrecruiter();
       
-    );
+    
   }
 }

@@ -52,7 +52,7 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                           color: Colors.red,
                           image: DecorationImage(
                               image: NetworkImage(
-                                  'https://pixel.nymag.com/imgs/daily/vulture/2017/06/14/14-tom-cruise.w700.h700.jpg'),
+                                  'https://previews.123rf.com/images/kadettmann/kadettmann1501/kadettmann150100129/36165349-passport-picture-businesswoman-with-brown-hair.jpg'),
                               fit: BoxFit.cover),
                           borderRadius: BorderRadius.all(Radius.circular(75.0)),
                           boxShadow: [
@@ -80,7 +80,7 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                       width: 5,
                     ),
                     Text(
-                      'Available for work',
+                      'Available For Work',
                       style: TextStyle(
                           fontSize: 17.0,
                           fontStyle: FontStyle.normal,
@@ -108,9 +108,9 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                                   borderRadius: BorderRadius.circular(25)),
                               child: Center(
                                   child: Text(
-                                'Skills',
+                                'Public Speaking',
                                 style: TextStyle(
-                                    fontFamily: 'Montserrat', fontSize: 18),
+                                    fontFamily: 'Montserrat', fontSize: 12),
                               )),
                             ),
                             Container(
@@ -120,9 +120,9 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                                   border: Border.all(color: Colors.grey),
                                   borderRadius: BorderRadius.circular(25)), child: Center(
                                   child: Text(
-                                'Skills',
+                                'Mentoring',
                                 style: TextStyle(
-                                    fontFamily: 'Montserrat', fontSize: 18),
+                                    fontFamily: 'Montserrat', fontSize: 15),
                               ))
                             ),
                           ],
@@ -142,7 +142,7 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                                   border: Border.all(color: Colors.grey),
                                   borderRadius: BorderRadius.circular(25)), child: Center(
                                   child: Text(
-                                'Skills',
+                                'Networking',
                                 style: TextStyle(
                                     fontFamily: 'Montserrat', fontSize: 18),
                               ))
@@ -154,7 +154,7 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                                   border: Border.all(color: Colors.grey),
                                   borderRadius: BorderRadius.circular(25)), child: Center(
                                   child: Text(
-                                'Skills',
+                                'Delivering',
                                 style: TextStyle(
                                     fontFamily: 'Montserrat', fontSize: 18),
                               ))
@@ -166,7 +166,7 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                                   border: Border.all(color: Colors.grey),
                                   borderRadius: BorderRadius.circular(25)), child: Center(
                                   child: Text(
-                                'Skills',
+                                'Dristibutor',
                                 style: TextStyle(
                                     fontFamily: 'Montserrat', fontSize: 18),
                               ))
