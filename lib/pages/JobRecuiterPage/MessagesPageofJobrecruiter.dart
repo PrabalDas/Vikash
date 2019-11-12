@@ -14,7 +14,7 @@ class _MessagesPageofJobrecruiterState extends State<MessagesPageofJobrecruiter>
       body: SingleChildScrollView(physics: BouncingScrollPhysics(),
               child: Column(
           children: <Widget>[ Padding(
-            padding: const EdgeInsets.all(22.0),
+            padding: const EdgeInsets.all(35.0),
             child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,7 +64,7 @@ class _MessagesPageofJobrecruiterState extends State<MessagesPageofJobrecruiter>
                             ),
                             Padding(
                               padding: EdgeInsets.only(top: 10),
-                              child: Text('Group Name'),
+                              child: Text('Sector $index'),
                             )
                           ],
                         );
@@ -75,11 +75,12 @@ class _MessagesPageofJobrecruiterState extends State<MessagesPageofJobrecruiter>
                     title: 'Direct Messages',
                   ),
                   ListView.builder(
-                    itemCount: 3,
+                    itemCount: 5,
                     shrinkWrap: true,
                     physics: ClampingScrollPhysics(),
                     scrollDirection: Axis.vertical,
-                    itemBuilder: (BuildContext context, int index) {
+                    itemBuilder: (BuildContext context, int index,) {
+                   
                       return Material(
                         child: InkWell(
                           onTap: () {
@@ -126,7 +127,7 @@ class _MessagesPageofJobrecruiterState extends State<MessagesPageofJobrecruiter>
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: <Widget>[
                                       Text(
-                                        'Jocelyn',
+                                        'User $index',
                                         style: TextStyle(
                                           color: Colors.black,
                                           fontWeight: FontWeight.bold,

@@ -66,7 +66,7 @@ class _LocationPageofJobSeekerState extends State<LocationPageofJobSeeker> {
                   ),
                 ),
                 SizedBox(
-                  height: 25,
+                  height: 45,
                 ),
                 SingleChildScrollView(
                   child: FadeAnimation(
@@ -88,8 +88,8 @@ class _LocationPageofJobSeekerState extends State<LocationPageofJobSeeker> {
                                               JobDescription()));
                                 },
                                 child: Container(
-                                  height: 150,
-                                  width: 150,
+                                  height: 175,
+                                  width: 175,
                                   child: Center(
                                       child: Text(
                                     "Tractor Driver",
@@ -137,8 +137,8 @@ class _LocationPageofJobSeekerState extends State<LocationPageofJobSeeker> {
                                         fontWeight: FontWeight.bold,
                                         fontFamily: 'Montserrat'),
                                   )),
-                                  height: 150,
-                                  width: 150,
+                                  height: 175,
+                                  width: 175,
                                   padding: EdgeInsets.all(8),
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
@@ -186,8 +186,8 @@ class _LocationPageofJobSeekerState extends State<LocationPageofJobSeeker> {
                                         fontWeight: FontWeight.bold,
                                         fontFamily: 'Montserrat'),
                                   )),
-                                  height: 150,
-                                  width: 150,
+                                  height: 175,
+                                  width: 175,
                                   padding: EdgeInsets.all(8),
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
@@ -227,8 +227,8 @@ class _LocationPageofJobSeekerState extends State<LocationPageofJobSeeker> {
                                         fontWeight: FontWeight.bold,
                                         fontFamily: 'Montserrat'),
                                   )),
-                                  height: 150,
-                                  width: 150,
+                                  height: 175,
+                                  width: 175,
                                   padding: EdgeInsets.all(8),
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
@@ -276,8 +276,8 @@ class _LocationPageofJobSeekerState extends State<LocationPageofJobSeeker> {
                                         fontWeight: FontWeight.bold,
                                         fontFamily: 'Montserrat'),
                                   )),
-                                  height: 150,
-                                  width: 150,
+                                  height: 175,
+                                  width: 175,
                                   padding: EdgeInsets.all(8),
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
@@ -317,8 +317,8 @@ class _LocationPageofJobSeekerState extends State<LocationPageofJobSeeker> {
                                         fontWeight: FontWeight.bold,
                                         fontFamily: 'Montserrat'),
                                   )),
-                                  height: 150,
-                                  width: 150,
+                                  height: 175,
+                                  width: 175,
                                   padding: EdgeInsets.all(8),
                                   decoration: BoxDecoration(
                                       image: DecorationImage(

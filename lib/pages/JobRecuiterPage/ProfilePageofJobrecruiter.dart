@@ -41,7 +41,7 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
         ),
         Positioned(
             width: 350.0,
-            top: MediaQuery.of(context).size.height / 5,
+            top: MediaQuery.of(context).size.height / 5,left: 29,
             child: Column(
               children: <Widget>[
                 FadeAnimation(
@@ -100,9 +100,9 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                                               1.5, Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            Container(
+                            Container(padding: EdgeInsets.all(3),
                               height: 30,
-                              width: 110,
+                              width: 120,
                               decoration: BoxDecoration(
                                   border: Border.all(color: Colors.grey),
                                   borderRadius: BorderRadius.circular(25)),
@@ -113,7 +113,7 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                                     fontFamily: 'Montserrat', fontSize: 12),
                               )),
                             ),
-                            Container(
+                            Container(padding: EdgeInsets.all(3),
                               height: 30,
                               width: 110,
                               decoration: BoxDecoration(
@@ -135,7 +135,7 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                                             1.8,Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            Container(
+                            Container(padding: EdgeInsets.all(3),
                               height: 30,
                               width: 110,
                               decoration: BoxDecoration(
@@ -144,10 +144,10 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                                   child: Text(
                                 'Networking',
                                 style: TextStyle(
-                                    fontFamily: 'Montserrat', fontSize: 18),
+                                    fontFamily: 'Montserrat', fontSize: 15),
                               ))
                             ),
-                            Container(
+                            Container(padding: EdgeInsets.all(3),
                               height: 30,
                               width: 110,
                               decoration: BoxDecoration(
@@ -156,10 +156,10 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                                   child: Text(
                                 'Delivering',
                                 style: TextStyle(
-                                    fontFamily: 'Montserrat', fontSize: 18),
+                                    fontFamily: 'Montserrat', fontSize: 15),
                               ))
                             ),
-                            Container(
+                            Container(padding: EdgeInsets.all(3),
                               height: 30,
                               width: 110,
                               decoration: BoxDecoration(
@@ -168,7 +168,7 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                                   child: Text(
                                 'Dristibutor',
                                 style: TextStyle(
-                                    fontFamily: 'Montserrat', fontSize: 18),
+                                    fontFamily: 'Montserrat', fontSize: 15),
                               ))
                             )
                           ],
@@ -178,7 +178,7 @@ class _ProfilePageofJobrecruiterState extends State<ProfilePageofJobrecruiter> {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
                 Container(
                     height: 30.0,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ApplyPage.dart';
+
 class JobDescription extends StatefulWidget {
   @override
   _JobDescriptionState createState() => _JobDescriptionState();
@@ -121,14 +123,14 @@ class _JobDescriptionState extends State<JobDescription> {
                 'Attend the Bi Weekly & review meetings. In the Bi-weekly training, he shall transmit and also check the catlogs the feedback on technology messages, input requirements and progress of achievements on the targets given for crop production, input management including farm credit and others.',
                 style: TextStyle(
                     fontFamily: 'Montserrat',
-                    fontSize: 17,
+                    fontSize: 15,
                     color: Colors.black),
               ),
             ),
             SizedBox(
-              height: 9,
+              height: 50,
             ),
-            RaisedButton(color: Colors.lightBlue,padding: EdgeInsets.all(8),onPressed: (){},
+            RaisedButton(color: Colors.lightBlue,padding: EdgeInsets.all(8),onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>ApplyPage()));},
               textColor: Colors.white,
               elevation: 19,
               child: Text(

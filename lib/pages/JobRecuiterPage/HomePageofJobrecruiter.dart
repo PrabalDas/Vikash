@@ -80,7 +80,7 @@ class _HomePageofJobrecruiterState extends State<HomePageofJobrecruiter> {
                             child: Column(
                               children: <Widget>[
                                 Container(
-                                  height: 170,
+                                  height: 250,
                                   width: 350,
                                   decoration: BoxDecoration( image: DecorationImage(
                                           colorFilter: ColorFilter.mode(
@@ -90,7 +90,7 @@ class _HomePageofJobrecruiterState extends State<HomePageofJobrecruiter> {
                                               'https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80'),
                                           fit: BoxFit.fill),
                                       color: Colors.grey[200],
-                                      borderRadius: BorderRadius.circular(25)),
+                                      borderRadius: BorderRadius.circular(30)),
                                 )
                               ],
                             ),
@@ -104,7 +104,7 @@ class _HomePageofJobrecruiterState extends State<HomePageofJobrecruiter> {
                             child: Column(
                               children: <Widget>[
                                 Container(
-                                  height: 170,
+                                  height: 250,
                                   width: 350,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
@@ -129,7 +129,7 @@ class _HomePageofJobrecruiterState extends State<HomePageofJobrecruiter> {
                             child: Column(
                               children: <Widget>[
                                 Container(
-                                  height: 170,
+                                  height: 250,
                                   width: 350,
                                   decoration: BoxDecoration( image: DecorationImage(
                                           colorFilter: ColorFilter.mode(

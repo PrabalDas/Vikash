@@ -41,7 +41,7 @@ class _ProfilePageofJobSeekerState extends State<ProfilePageofJobSeeker> {
         ),
         Positioned(
             width: 350.0,
-            top: MediaQuery.of(context).size.height / 5,
+            top: MediaQuery.of(context).size.height / 5,left: 29,
             child: Column(
               children: <Widget>[
                 FadeAnimation(
@@ -100,7 +100,7 @@ class _ProfilePageofJobSeekerState extends State<ProfilePageofJobSeeker> {
                                               1.5, Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
-                            Container(
+                            Container(padding: EdgeInsets.all(3),
                               height: 30,
                               width: 110,
                               decoration: BoxDecoration(
@@ -110,7 +110,7 @@ class _ProfilePageofJobSeekerState extends State<ProfilePageofJobSeeker> {
                                   child: Text(
                                 'Repairing',
                                 style: TextStyle(
-                                    fontFamily: 'Montserrat', fontSize: 18),
+                                    fontFamily: 'Montserrat', fontSize: 15),
                               )),
                             ),
                             Container(
@@ -122,7 +122,7 @@ class _ProfilePageofJobSeekerState extends State<ProfilePageofJobSeeker> {
                                   child: Text(
                                 'Driving',
                                 style: TextStyle(
-                                    fontFamily: 'Montserrat', fontSize: 18),
+                                    fontFamily: 'Montserrat', fontSize: 15),
                               ))
                             ),
                           ],
@@ -144,7 +144,7 @@ class _ProfilePageofJobSeekerState extends State<ProfilePageofJobSeeker> {
                                   child: Text(
                                 'Delivering',
                                 style: TextStyle(
-                                    fontFamily: 'Montserrat', fontSize: 18),
+                                    fontFamily: 'Montserrat', fontSize: 15),
                               ))
                             ),
                             Container(
@@ -156,7 +156,7 @@ class _ProfilePageofJobSeekerState extends State<ProfilePageofJobSeeker> {
                                   child: Text(
                                 'Housekeeping',
                                 style: TextStyle(
-                                    fontFamily: 'Montserrat', fontSize: 15),
+                                    fontFamily: 'Montserrat', fontSize: 12),
                               ))
                             ),
                             Container(
@@ -168,7 +168,7 @@ class _ProfilePageofJobSeekerState extends State<ProfilePageofJobSeeker> {
                                   child: Text(
                                 'Cleaning',
                                 style: TextStyle(
-                                    fontFamily: 'Montserrat', fontSize: 18),
+                                    fontFamily: 'Montserrat', fontSize: 15),
                               ))
                             )
                           ],
@@ -178,7 +178,7 @@ class _ProfilePageofJobSeekerState extends State<ProfilePageofJobSeeker> {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
                 Container(
                     height: 30.0,

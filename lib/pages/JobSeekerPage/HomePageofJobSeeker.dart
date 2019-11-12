@@ -78,7 +78,7 @@ class _HomePageofJobSeekerState extends State<HomePageofJobSeeker> {
                             child: Column(
                               children: <Widget>[
                                 Container(
-                                  height: 170,
+                                  height: 250,
                                   width: 350,
                                   decoration: BoxDecoration( image: DecorationImage(
                                           colorFilter: ColorFilter.mode(
@@ -102,7 +102,7 @@ class _HomePageofJobSeekerState extends State<HomePageofJobSeeker> {
                             child: Column(
                               children: <Widget>[
                                 Container(
-                                  height: 170,
+                                  height: 250,
                                   width: 350,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
@@ -127,7 +127,7 @@ class _HomePageofJobSeekerState extends State<HomePageofJobSeeker> {
                             child: Column(
                               children: <Widget>[
                                 Container(
-                                  height: 170,
+                                  height: 250,
                                   width: 350,
                                   decoration: BoxDecoration( image: DecorationImage(
                                           colorFilter: ColorFilter.mode(

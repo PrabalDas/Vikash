@@ -52,7 +52,7 @@ class _SelectionPageState extends State<SelectionPage> {
                   'I WANT TO WORK AS A...',
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 30,
+                      fontSize: 25,
                       fontFamily: 'Montserrat',
                       fontStyle: FontStyle.normal),
                 ),
