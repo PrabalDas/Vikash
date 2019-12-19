@@ -1,20 +1,16 @@
-  
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:vikash/pages/VillagePages/VillagePageA.dart';
 
 import 'package:vikash/resources/coffee_model.dart';
-
-
-
-
-
 
 class LocationPageofJobrecruiter extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State< LocationPageofJobrecruiter> {
+class _MyHomePageState extends State<LocationPageofJobrecruiter> {
   GoogleMapController _controller;
 
   List<Marker> allMarkers = [];
@@ -80,10 +76,10 @@ class _MyHomePageState extends State< LocationPageofJobrecruiter> {
                         borderRadius: BorderRadius.circular(10.0),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black54,
-                            offset: Offset(0.0, 4.0),
-                            blurRadius: 10.0,
-                          ),
+                              color: Colors.black54,
+                              offset: Offset(2.0, 4.0),
+                              blurRadius: 20.0,
+                              spreadRadius: 1),
                         ]),
                     child: Container(
                         decoration: BoxDecoration(
@@ -94,9 +90,8 @@ class _MyHomePageState extends State< LocationPageofJobrecruiter> {
                               height: 90.0,
                               width: 90.0,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.all(
-                                     
-                                       Radius.circular(40.0)),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(40.0)),
                                   image: DecorationImage(
                                       image: NetworkImage(
                                           coffeeShops[index].thumbNail),
@@ -132,53 +127,66 @@ class _MyHomePageState extends State< LocationPageofJobrecruiter> {
           ])),
     );
   }
+  void mapCreated(controller) {
+      setState(() {
+        _controller = controller;
+        changeMapMode();
+      });
+    }
+     moveCamera() {
+      _controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
+          target: coffeeShops[_pageController.page.toInt()].locationCoords,
+          zoom: 14.0,
+          bearing: 45.0,
+          tilt: 45.0)));
+    }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       
         body: Stack(
-          children: <Widget>[
-            Container(
-              height: MediaQuery.of(context).size.height - 50.0,
-              width: MediaQuery.of(context).size.width,
-              child: GoogleMap(
-                initialCameraPosition: CameraPosition(
-                    target: LatLng(40.7128, -74.0060), zoom: 12.0),
-                markers: Set.from(allMarkers),
-                onMapCreated: mapCreated,
-              ),
+      children: <Widget>[
+        Container(
+          height: MediaQuery.of(context).size.height - 50.0,
+          width: MediaQuery.of(context).size.width,
+          child: GoogleMap(
+            initialCameraPosition:
+                CameraPosition(target: LatLng(26.1445, 91.7362), zoom: 12.0),
+            markers: Set.from(allMarkers),
+            onMapCreated: mapCreated,
+          ),
+        ),
+        Positioned(
+          bottom: 20.0,
+          child: Container(
+            height: 200.0,
+            width: MediaQuery.of(context).size.width,
+            child: PageView.builder(
+              controller: _pageController,
+              itemCount: coffeeShops.length,
+              itemBuilder: (BuildContext context, int index) {
+                return _coffeeShopList(index);
+              },
             ),
-            Positioned(
-              bottom: 20.0,
-              child: Container(
-                height: 200.0,
-                width: MediaQuery.of(context).size.width,
-                child: PageView.builder(
-                  controller: _pageController,
-                  itemCount: coffeeShops.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return _coffeeShopList(index);
-                  },
-                ),
-              ),
-            )
-          ],
-        ));
+          ),
+        )
+      ],
+    ));
+
+    
+
+   
   }
 
-  void mapCreated(controller) {
-    setState(() {
-      _controller = controller;
-    });
+  changeMapMode() {
+    getJsonFile('assets/StyleMap.json').then(setMapStyle);
   }
 
-  moveCamera() {
-    _controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
-        target: coffeeShops[_pageController.page.toInt()].locationCoords,
-        zoom: 14.0,
-        bearing: 45.0,
-        tilt: 45.0)));
+  Future<String> getJsonFile(String path) async {
+    return await rootBundle.loadString(path);
+  }
+
+  void setMapStyle(String mapStyle) {
+    _controller.setMapStyle(mapStyle);
   }
 }
-

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vikash/widgets/HomeScreenwidgets.dart';
 
 class HomePageofJobrecruiter extends StatefulWidget {
+  
   @override
   _HomePageofJobrecruiterState createState() => _HomePageofJobrecruiterState();
 }
