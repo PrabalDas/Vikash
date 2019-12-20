@@ -42,11 +42,6 @@ class _SelectionPageState extends State<SelectionPage> {
                         height: MediaQuery.of(context).size.height / 5.5,
                         child: InkWell(
                             onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          JobRecruiterPage()));
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -70,12 +65,18 @@ class _SelectionPageState extends State<SelectionPage> {
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
                         height: MediaQuery.of(context).size.height / 5.5,
-                        child: InkWell(
+                        child: InkWell(onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          JobRecruiterPage()));},
                             child: Container(
-                          decoration: BoxDecoration( image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/images/farming.jpg'),
-                                      fit: BoxFit.cover),
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image:
+                                      AssetImage('assets/images/farming.jpg'),
+                                  fit: BoxFit.cover),
                               color: Colors.yellowAccent,
                               borderRadius: BorderRadius.circular(10)),
                         )),
@@ -196,7 +197,7 @@ class _SelectionPageState extends State<SelectionPage> {
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [Color(0xfff8f8f8), Color(0xffeafbea)]),
-              image: DecorationImage(
+              image: DecorationImage(colorFilter: ColorFilter.mode(Colors.black54, BlendMode.dstIn),
                 image: AssetImage(
                   'assets/images/pngtree-farmer-farm-farm-worker-hand-painted-png-image_476673.png',
                 ),
