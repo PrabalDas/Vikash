@@ -113,7 +113,7 @@ class _LocationPageofJobSeekerState extends State<LocationPageofJobSeeker> {
                                             offset: Offset(0, 8))
                                       ],
                                       gradient: LinearGradient(colors: [
-                                        Color(0xffec9b3b),
+                                        Color(0xffec9b36),
                                         Color(0xfff7be16)
                                       ]),
                                       border: Border.all(color: Colors.grey),
